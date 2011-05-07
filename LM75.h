@@ -16,9 +16,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef Morse_h
+#ifndef LM75_h
 
-#define Morse_h
+#define LM75_h
 
 #include "WProgram.h"
 
