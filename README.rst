@@ -7,6 +7,7 @@ This library provides an interface to LM75 I2C Temperature Sensors.
 Installation
 ============
 This library can be downloaded from github at:
+    
     https://github.com/thefekete/LM75
 
 Just download the and unzip into your arduino library folder, or into the
