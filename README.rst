@@ -2,7 +2,7 @@
 LM75 Arduino Library
 ====================
 
-This library provides an interface to LM75 I2C Temperature Sensors.
+This library provides an API for LM75 I2C Temperature Sensors.
 
 Installation
 ============
