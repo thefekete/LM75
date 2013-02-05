@@ -16,7 +16,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "WProgram.h"
 #include <Wire.h>
 #include "LM75.h"
 
@@ -42,11 +41,11 @@ float LM75::regdata2float (word regdata)
 
 word LM75::_register16 (byte reg) {
   Wire.beginTransmission(address);
-  Wire.send(reg);	
+  Wire.write(reg);	
   Wire.endTransmission();
   
   Wire.requestFrom(address, 2);
-  word regdata = (Wire.receive() << 8) | Wire.receive();
+  word regdata = (Wire.read() << 8) | Wire.read();
   return regdata;
 }
 
@@ -55,25 +54,25 @@ void LM75::_register16 (byte reg, word regdata) {
   byte lsb = (byte)(regdata);
   
   Wire.beginTransmission(address);
-  Wire.send(reg);
-  Wire.send(msb);
-  Wire.send(lsb);
+  Wire.write(reg);
+  Wire.write(msb);
+  Wire.write(lsb);
   Wire.endTransmission();
 }
 
 word LM75::_register8 (byte reg) {
   Wire.beginTransmission(address);
-  Wire.send(reg);	
+  Wire.write(reg);	
   Wire.endTransmission();
   
   Wire.requestFrom(address, 1);
-  return Wire.receive();
+  return Wire.read();
 }
 
 void LM75::_register8 (byte reg, byte regdata) {  
   Wire.beginTransmission(address);
-  Wire.send(reg);
-  Wire.send(regdata);
+  Wire.write(reg);
+  Wire.write(regdata);
   Wire.endTransmission();
 }
 
